@@ -34,7 +34,7 @@ class Scraper:
             matches = tree.xpath(self.xpath)
 
             if not matches:
-                logger.warn(
+                logger.warning(
                         "The expression '{xpath}' doesn't match any element in the archive {archive_url}".format(
                                 xpath=self.xpath,
                                 archive_url=archive_url))

@@ -91,9 +91,9 @@ async def scrape_archive(session, url, archive_timestamp, scrape_function, sem):
                 # Scrape the archive content
                 scraping_result = await scrape_function(session, archive_url, archive_timestamp, archive_content)
             except ScrapeError as e:
-                logger.warn('Could not scrape the archive {url} : {msg}'.format(url=archive_url, msg=str(e)))
+                logger.warning('Could not scrape the archive {url} : {msg}'.format(url=archive_url, msg=str(e)))
             except HTTPError as e:
-                logger.warn('Could not download the archive {url} : {msg}'.format(url=archive_url, msg=str(e)))
+                logger.warning('Could not download the archive {url} : {msg}'.format(url=archive_url, msg=str(e)))
             except Exception as e:
                 logger.exception('Error while scraping the archive {url} : {msg}'.format(url=archive_url, msg=str(e)))
 
